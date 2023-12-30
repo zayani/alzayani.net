@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --c1: #076eff;
+      }
+
+      body {
+        direction: rtl;
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      #page {
+        margin: auto;
+        background: #f5f5f5;
+        max-width: 800px;
+
+        font-size: 20px;
+        position: relative;
+      }
+
+      .card {
+        padding: 20px;
+        padding-right: 125px;
+        position: relative;
+      }
+
+      .card::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 90px;
+        top: 20px;
+        bottom: 20px;
+        right: 20px;
+        background-image: var(--bg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .card:nth-child(2n) {
+        padding-right: 20px;
+        padding-left: 125px;
+      }
+
+      .card:nth-child(2n)::before {
+        right: auto;
+        left: 20px;
+      }
+
+      .card + .card::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 0;
+        height: 1px;
+        background: #888;
+      }
+
+      .header {
+        position: relative;
+      }
+
+      .title {
+        font-size: 22px;
+        font-weight: bold;
+        color: var(--c1);
+        padding-bottom: 20px;
+      }
+
+      .cat {
+        position: absolute;
+        top: 0;
+        left: 100px;
+        background: var(--c1);
+        color: #f5f5f5;
+        padding: 5px 20px;
+        border-radius: 50px;
+        display: none;
+      }
+
+      .links {
+        direction: ltr;
+        display2: none;
+        margin-top: 10px;
+      }
+
+      a {
+        color: var(--c1);
+        padding: 5px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      #srcs {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        color: var(--c1);
+        font-weight: bold;
+      }
+
+      #pg {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        color: var(--c1);
+        font-weight: bold;
+      }
+
+      #title {
+        background: var(--c1);
+        color: #fff;
+        text-align: center;
+        padding: 30px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="title">2023 في مجال العلوم</div>
+      <div id="cards">
+        <div class="card" cat="طب" style="--bg: url('1.svg')">
+          <div class="header">
+            <div class="title">طب | تقدم ضد ألزهايمر</div>
+          </div>
+          <div class="desc">
+            حصل عقار ليكانيماب على موافقة السلطات الصحية الأمريكية كعلاج
+            للألزهايمر. يعمل العقار كجسم مضاد أحادي النسيلة ضد الأميلويد وأظهر
+            قدرة على تقليل فقدان الإدراك بنسبة 27% مقارنة بالعلاج الوهمي، وعلى
+            الرغم من مخاطره العالية وعدم شموليته، يقدم العقار أملاً جديداً لمرضى
+            الزهايمر وأسرهم
+          </div>
+          <div class="links">
+            <a
+              href="https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval"
+              target="_blank"
+              >fda.gov/news…</a
+            >
+            <a
+              href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9d1ff786-e577-410a-a273-c4d7d0e4e975"
+              target="_blank"
+              >dailymed.nlm…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="طاقة" style="--bg: url('2.svg')">
+          <div class="header">
+            <div class="title">طاقة | إنتاج هيدروجين اقتصادي</div>
+          </div>
+          <div class="desc">
+            نجح فريق علمي دولي بقيادة جامعة أديلايد في تقسيم مياه البحر الطبيعية
+            إلى أكسجين وهيدروجين بكفاءة تقارب 100 في المائة، لإنتاج الهيدروجين
+            المتجدد عن طريق التحليل الكهربائي دون الحاجة لاستخدام ماء منقى
+            وباستخدام محفز رخيص الثمن في محلل كهربائي يمكن تصنيعه تجاريًا
+          </div>
+          <div class="links">
+            <a
+              href="https://www.adelaide.edu.au/newsroom/news/list/2023/01/30/seawater-split-to-produce-green-hydrogen"
+              target="_blank"
+              >adelaide.edu…</a
+            >
+            <a
+              href="https://www.nature.com/articles/s41560-023-01195-x"
+              target="_blank"
+              >nature.com/a…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="طب" style="--bg: url('3.svg')">
+          <div class="header">
+            <div class="title">طب | علاج كريسبر جديد</div>
+          </div>
+          <div class="desc">
+            في خطوة هي الأولى من نوعها على مستوى العالم، وافقت هيئة تنظيم
+            الأدوية في المملكة المتحدة على أداة تحرير الجينوم Crispr-Cas9 التي
+            تسمى Casgevy، لعلاج الأمراض. وقد تبين أن العلاج يخفف نوبات الألم
+            المنهكة في مرض فقر الدم المنجلي ويزيل أو يقلل الحاجة إلى نقل خلايا
+            الدم الحمراء في مرض الثلاسيميا لمدة عام على الأقل.
+          </div>
+          <div class="links">
+            <a
+              href="https://www.nature.com/articles/d41586-023-03590-6"
+              target="_blank"
+              >nature.com/a…</a
+            >
+            <a
+              href="https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia"
+              target="_blank"
+              >gov.uk/gover…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="طاقة" style="--bg: url('4.svg')">
+          <div class="header">
+            <div class="title">طاقة | كهرباء من المدار</div>
+          </div>
+          <div class="desc">
+            أثبت فريق من مشروع الطاقة الشمسية الفضائية التابع لمعهد كاليفورنيا
+            للتكنولوجيا (كالتيك) أنه من الممكن تحويل الطاقة الكهربائية إلى موجات
+            ميكروويف في المدار وإرسالها إلى الأرض بمستويات يمكن رصدها، الأمر
+            الذي قد يفتح الطريق يومًا ما لمحطات طاقة شمسية مدارية
+          </div>
+          <div class="links">
+            <a
+              href="https://www.caltech.edu/about/news/in-a-first-caltechs-space-solar-power-demonstrator-wirelessly-transmits-power-in-space"
+              target="_blank"
+              >caltech.edu/…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="أحياء" style="--bg: url('5.svg')">
+          <div class="header">
+            <div class="title">أحياء | أضخم من الحوت الأزرق</div>
+          </div>
+          <div class="desc">
+            في بيرو، اكتشف علماء الحفريات عظامًا ضخمة للغاية. وهي لفصيلة من
+            الحيتان القديمة التي عاشت قبل حوالي 39 مليون سنة، وأطلق الفريق على
+            الفصيلة الجديدة اسم Perucetus colossus، ويُعتقد أنه افراد هذه
+            الفصيلة يصل طولها إلى حوالي 20 مترًا ووزنها إلى 340 طنًا - بالمقارنة
+            يصل وزن الحيتان الزرقاء إلى أقل من 200 طن.
+          </div>
+          <div class="links">
+            <a
+              href="https://www.scimex.org/newsfeed/whale-fossil-could-be-from-one-of-the-largest-heaviest-animals-ever-recorded"
+              target="_blank"
+              >scimex.org/n…</a
+            >
+            <a
+              href="https://www.nature.com/articles/s41586-023-06381-1"
+              target="_blank"
+              >nature.com/a…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="علم المواد" style="--bg: url('6.svg')">
+          <div class="header">
+            <div class="title">
+              علم المواد | حالة إلكترونية غريبة في الجرافين
+            </div>
+          </div>
+          <div class="desc">
+            يبدو أنه لا نهاية للمفاجآت من المادة الرائعة المفضلة لدى الجميع، وهي
+            الجرافين. فلقد اكتشف فيزيائيون من معهد ماساتشوستس للتكنولوجيا الآن
+            حالة إلكترونية جديدة تمامًا مختبئة في الجرافين - وهو ما أطلقوا عليه
+            الاسم الغريب "ferro-valleytricity" وهذ الحالة الفريدة لاصطفاف
+            الالكترونات قد تساعد في مضاعفة سعة تخزين البيانات في الرقاقات
+          </div>
+          <div class="links">
+            <a
+              href="https://news.mit.edu/2023/five-layer-graphene-sandwich-rare-electronic-behavior-1018"
+              target="_blank"
+              >news.mit.edu…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="علم المواد" style="--bg: url('7.svg')">
+          <div class="header">
+            <div class="title">علم المواد | الحلم الضائع للموصل الفائق</div>
+          </div>
+          <div class="desc">
+            في يوليو، ادعى فريق علمي كوري جنوبي أنه اكتشف أول موصل فائق في درجة
+            حرارة الغرفة، وهو مركب قائم على الرصاص يسمى LK-99. يمكن لهذا الإنجاز
+            الكبير أن يحدث ثورة في تقنيات مثل كابلات الطاقة وأجهزة التصوير
+            بالرنين المغناطيسي. لكن بحلول أواخر أغسطس، لم تنجح محاولات العديد من
+            المختبرات الرائدة في تكرار النتائج.
+          </div>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2307.12008" target="_blank"
+              >arxiv.org/ab…</a
+            >
+            <a href="https://arxiv.org/abs/2307.12037" target="_blank"
+              >arxiv.org/ab…</a
+            >
+            <a
+              href="https://www.nature.com/articles/d41586-023-02585-7"
+              target="_blank"
+              >nature.com/a…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="أحياء/طب" style="--bg: url('8.svg')">
+          <div class="header">
+            <div class="title">أحياء/طب | نماذج أجنة قائمة على خلايا جذعية</div>
+          </div>
+          <div class="desc">
+            تم إحراز تقدم كبير في استخدام الخلايا الجذعية لإنشاء هياكل مشابهة
+            للأجنة البشرية المبكرة، الأمر الذي اجتذب اهتماماً علمياً وإعلامياً
+            واسع النطاق. على الرغم من أنها واعدة لفهم ومعالجة القضايا الإنجابية
+            والتنموية، إلا أن هذه النماذج المعتمدة على الخلايا الجذعية ليست
+            معادلة بعد للأجنة البشرية الفعلية
+          </div>
+          <div class="links">
+            <a
+              href="https://www.nature.com/articles/s41586-023-06368-y"
+              target="_blank"
+              >nature.com/a…</a
+            >
+            <a
+              href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8760366/"
+              target="_blank"
+              >ncbi.nlm.nih…</a
+            >
+            <a
+              href="https://www.sciencemediacentre.org/expert-reaction-to-study-on-a-model-mimicking-the-structure-of-a-post-implantation-human-embryo/"
+              target="_blank"
+              >sciencemedia…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="علم المواد" style="--bg: url('9.svg')">
+          <div class="header">
+            <div class="title">علم المواد | حوسبة الألماس</div>
+          </div>
+          <div class="desc">
+            طور باحثون في اليابان طريقة جديدة لصنع رقائق شبه موصلات من الألماس
+            يمكن استخدامها في الحوسبة الكمية وتخزين البايانات الكمومية. يتيح
+            النقاء الفائق للألماس تخزين 25 مليون تيرابايت في رقاقة بحجم 5 سم
+          </div>
+          <div class="links">
+            <a
+              href="https://www.saga-u.ac.jp/koho/press/2022041924555"
+              target="_blank"
+              >saga-u.ac.jp…</a
+            >
+            <a
+              href="https://www.ad-na.com/magazine_en/archives/1401"
+              target="_blank"
+              >ad-na.com/ma…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="طب" style="--bg: url('10.svg')">
+          <div class="header">
+            <div class="title">طب | التوسع في دواء لمكافحة السمنة</div>
+          </div>
+          <div class="desc">
+            جعل دواء سيماغلوتايد (أوزمبيك و ويغوفي) عام 2023 عامًا ثوريًا
+            لمكافحة السمنة، وبالرغم ان العلاج ليس جديدًا، الا انه تم تبنيه بشكل
+            واسع هذا العام بعد خروج عدة دراسات تثبت جدواه لمكافحة السمنة رغم
+            اكتشاف بعض المخاطر
+          </div>
+          <div class="links">
+            <a
+              href="https://www.reuters.com/business/healthcare-pharmaceuticals/who-consider-adding-obesity-drugs-essential-medicines-list-2023-03-29/"
+              target="_blank"
+              >reuters.com/…</a
+            >
+            <a
+              href="https://www.nature.com/articles/s41573-021-00337-8"
+              target="_blank"
+              >nature.com/a…</a
+            >
+            <a
+              href="https://www.nytimes.com/2022/11/22/well/ozempic-diabetes-weight-loss.html"
+              target="_blank"
+              >nytimes.com/…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="أحياء" style="--bg: url('11.svg')">
+          <div class="header">
+            <div class="title">أحياء | خريطة كاملة لدماغ الذبابة</div>
+          </div>
+          <div class="desc">
+            نجح باحثون في جامعة كامبريدج في بناء أول خريطة توضح كل خلية عصبية
+            وكيفية ارتباطها ببعضها البعض في دماغ يرقة ذبابة الفاكهة. تُعد
+            الخريطة المكونة من ثلاثة آلاف خلية عصبية ونصف مليون نقطة تشابك عصبي
+            أكبر شبكة عصبية كاملة تم رسمها وسيساعد البحث على فهم المبادئ
+            الأساسية التي تنتقل من خلالها الإشارات عبر الدماغ على المستوى العصبي
+            وتؤدي إلى السلوك والتعلم
+          </div>
+          <div class="links">
+            <a
+              href="https://www.science.org/doi/10.1126/science.add9330"
+              target="_blank"
+              >science.org/…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="فلك" style="--bg: url('12.svg')">
+          <div class="header">
+            <div class="title">فلك | تموجات هائلة في نسيج الزمكان</div>
+          </div>
+          <div class="desc">
+            لأول مرة، اكتشف العلماء موجات جاذبية منخفضة التردد تتحرك عبر المجرة.
+            من المحتمل أن تكون هذه التموجات الكونية هي الأصداء البعيدة للثقوب
+            السوداء الهائلة التي تتفاعل وتندمج على بعد مليارات السنين الضوئية
+          </div>
+          <div class="links">
+            <a
+              href="https://iopscience.iop.org/article/10.3847/2041-8213/acdac6"
+              target="_blank"
+              >iopscience.i…</a
+            >
+            <a
+              href="https://iopscience.iop.org/collections/apjl-230623-245-Focus-on-NANOGrav-15-year"
+              target="_blank"
+              >iopscience.i…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="أحياء" style="--bg: url('13.svg')">
+          <div class="header">
+            <div class="title">
+              أحياء | الانقراض الجماعي السادس يلوح في الأفق
+            </div>
+          </div>
+          <div class="desc">
+            قام فريق من جامعة هاواي في مانوا بحساب أن أجناس الحيوانات تنقرض
+            بمعدل 35 مرة أسرع من المعدلات الأساسية المتوقعة على مدى المليون سنة
+            الماضية، وهو ما يشير، كما يقولون، إلى أن الكوكب يشهد حدث انقراض
+            جماعي سادس يقوده الإنسان.
+          </div>
+          <div class="links">
+            <a
+              href="https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12816"
+              target="_blank"
+              >onlinelibrar…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="فلك" style="--bg: url('14.svg')">
+          <div class="header">
+            <div class="title">فلك | حل معضلة المجرات المبكرة</div>
+          </div>
+          <div class="desc">
+            معضلة المجرات المبكرة التي اكتشفها تلسكوب ويب العام الماضي سببت جدل
+            بين العلماء حول كيفية نشوء هذة المجرات الكبيرة بعمر صغير للكون، لكن
+            يبدوا أن فريق بقيادة جامعة كالتيك وجدوا تفسير منطقي، فما تم مشاهدته
+            ليس مجرات ضخمة لكن فترة مبكرة من هبجان تشكل النجوم بصورة متواترة وهو
+            مايفسر سطوعها العالي
+          </div>
+          <div class="links">
+            <a
+              href="https://iopscience.iop.org/article/10.3847/2041-8213/acf85a"
+              target="_blank"
+              >iopscience.i…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="أحياء" style="--bg: url('15.svg')">
+          <div class="header">
+            <div class="title">أحياء | خلايا دماغية جديدة</div>
+          </div>
+          <div class="desc">
+            من خلال فحص أدمغة الفئران، وجد الفريق في جامعة لوزان في سويسرا نوع
+            خلايا دماغية جديدة ويبدو أنها هجين بين الخلية العصبية والخلايا
+            النجمية متجمعة وتظهر هذة الخلايا في مناطق محددة جدًا في الدماغ، على
+            عكس الخلايا النجمية والتي يمكن ان نجدها في جميع أنحاء الدماغ
+          </div>
+          <div class="links">
+            <a
+              href="https://neurosciencenews.com/hybrid-cell-discovery-neuroscience-23883/"
+              target="_blank"
+              >neuroscience…</a
+            >
+            <a
+              href="https://www.nature.com/articles/s41586-023-06502-w"
+              target="_blank"
+              >nature.com/a…</a
+            >
+          </div>
+        </div>
+
+        <div class="card" cat="حوسبة" style="--bg: url('16.svg')">
+          <div class="header">
+            <div class="title">حوسبة | ثورة نماذج اللغة الكبيرة</div>
+          </div>
+          <div class="desc">
+            سنة 2023 هي السنة التي تطور فيها الذكاء الصناعي بشكل متسارع واصبح
+            متاحًا للعامة بشكل موسع، حيث اطلقت OpenAI هذا العام نموذج GPT-4
+            والذي يعتبر نقلة كبرى من النماذج السابقة وسرعان ماظهرت النماذج
+            المنافسة مثل Claude 2 من Anthropic ونموذج جيماني من جوجل، واثارت
+            نماذج توليد الصور مثل MidJourny 5 و DALL·E 3 زوبعة وتخوف من انتشار
+            الصور المفبركة، كذلك نماذج توليد ومحاكاة الصوت اصبحت واقعية إلى درجة
+            ظهور اغاني باصوات فناين معروفين.
+          </div>
+          <div class="links">
+            <a
+              href="https://en.wikipedia.org/wiki/Large_language_model"
+              target="_blank"
+              >en.wikipedia…</a
+            >
+            <a
+              href="https://synthedia.substack.com/p/a-timeline-of-large-language-model"
+              target="_blank"
+              >synthedia.su…</a
+            >
+            <a href="https://arxiv.org/abs/2303.08774" target="_blank"
+              >arxiv.org/ab…</a
+            >
+            <a href="https://arxiv.org/abs/2312.11444" target="_blank"
+              >arxiv.org/ab…</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
