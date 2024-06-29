@@ -1,8 +1,8 @@
 let screens = [
   {
-    title: "Welcome! Let's get started",
+    title: "Join us at Grow more\n\n",
     inputs: [],
-    nextLabel: "Begin",
+    nextLabel: "Let's get started",
   },
   {
     title: "Personal Information",
@@ -273,8 +273,8 @@ function displayLastScreen() {
   let screenElm = document.getElementById("screen");
   screenElm.innerHTML = "";
 
-  let title = document.createElement("h1");
-  title.innerText = "Business Summary";
+  let title = document.createElement("h2");
+  title.innerText = "All done!\n\nHere is you business Summary:";
   screenElm.appendChild(title);
 
   let summary = document.createElement("p");
@@ -285,11 +285,11 @@ function displayLastScreen() {
 function generateSummary() {
   const companyInfo = `<b>${
     data.businessName
-  }</b> is a <b>${data.stage.toLowerCase()}</b> <b>${data.size.toLowerCase()}</b> enterprise in the <b>${
+  }</b> is a <b>${data.stage.toLowerCase()}</b> <b>${data.size.toLowerCase()}</b> business in the <b>${
     data.industry
   }</b> sector, based in <b>${
     data.country
-  }</b>. The company specializes in <b>${
+  }</b>.<br><br>The company specializes in <b>${
     data.products
   }</b> and is currently seeking funding to <b>${data.purpose.toLowerCase()}</b>. ${
     data.businessName
