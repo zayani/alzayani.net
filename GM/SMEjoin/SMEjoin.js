@@ -198,7 +198,7 @@ screens = [
       {
         type: "text",
         label: "First Name",
-        placeholder: "John",
+        placeholder: "Noor",
         id: "firstName",
         required: true,
         min: 1,
@@ -208,7 +208,7 @@ screens = [
       {
         type: "text",
         label: "Last Name",
-        placeholder: "Doe",
+        placeholder: "Hadid",
         id: "lastName",
         required: true,
         min: 1,
