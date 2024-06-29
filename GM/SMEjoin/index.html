@@ -151,10 +151,48 @@
       option:checked::after {
         border: none;
       }
+
+      /* Radio button styles */
+      .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .radio-wrapper {
+        position: relative;
+      }
+
+      .radio-wrapper input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .radio-wrapper label {
+        display: inline-block;
+        padding: 10px 15px;
+
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .radio-wrapper input[type="radio"]:checked + label {
+        background-color: #3498db;
+        border-color: #2980b9;
+        color: white;
+      }
+
+      .radio-wrapper label:hover {
+        background-color: #e0e0e0;
+      }
     </style>
   </head>
   <body>
     <div id="screen">Loading...</div>
-    <script src="SMEjoin.js"></script>
+    <script src="SMEjoin2.js"></script>
   </body>
 </html>
