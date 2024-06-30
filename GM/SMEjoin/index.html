@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Grow More - SME Join</title>
     <style>
       * {
@@ -192,10 +195,38 @@
       .radio-wrapper label:hover {
         background-color: #e0e0e0;
       }
+
+      input[type="submit"],
+      input[type="button"],
+      button {
+        background-color: #ffffff; /* Explicit background color */
+        border: 1px solid #000000; /* Explicit border color */
+        color: #000000; /* Explicit text color */
+        padding: 10px;
+        border-radius: 10px;
+        width: 200px;
+        cursor: pointer;
+        margin-top: 20px;
+        -webkit-appearance: none; /* Reset default appearance for Safari */
+        appearance: none;
+      }
+
+      input[type="submit"],
+      button {
+        align-self: flex-end;
+        font-size: 1.25rem;
+      }
+
+      /* Add hover styles for better user feedback */
+      input[type="submit"]:hover,
+      input[type="button"]:hover,
+      button:hover {
+        background-color: #f0f0f0;
+      }
     </style>
   </head>
   <body>
     <div id="screen">Loading...</div>
-    <script src="SMEjoin4.js"></script>
+    <script src="SMEjoin5.js"></script>
   </body>
 </html>
